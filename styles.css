@@ -94,3 +94,37 @@ h4 {
   cursor: pointer;
   visibility: visible;
 }
+
+/* guide reference:  https://www.youtube.com/watch?v=xoRbkm8XgfQ&ab_channel=KevinPowell */
+
+.guide {
+  color: grey;
+  font-size: 1.4rem;
+  width: max-content;
+}
+
+.guide[data-guide] {
+  position: relative;
+}
+
+.guide[data-guide]::after {
+  content: attr(data-guide);
+  position: absolute;
+  top: 0%;
+  left: -700%;
+  display: block;
+  padding: 10%;
+  width: 1500%;
+  border-radius: 10px;
+  color: black;
+  background-color: aliceblue;
+  text-align: left;
+  font-size: 1.3rem;
+  line-height: 2rem;
+  transform: scale(0);
+  transition: transform ease-in-out 250ms;
+}
+
+.guide[data-guide]:hover:after {
+  transform: scale(1);
+}

@@ -1,7 +1,7 @@
 /* RULES */
-//To win, one's value must be smaller or equal to 21 and larger than the opponent's value
+//To win, one's value must be less than or equal to 21 and also more than the opponent's value
 //User can add as many cards as possible to their desire and benefit
-//If player has blackjack(2 cards with 1 A and 1 10-valued card), they win even if the opponent has a total of 21-valued card
+//If player has natural or blackjack(2 cards with 1 A and 1 10-valued card), they win even if the opponent has a total of 21-valued card
 
 const compCard = $("#computer-card");
 const userCard = $("#user-card");
@@ -62,10 +62,10 @@ function newGame() {
       userCard.append(
         `<img src="images/cards/${card}.png" class="card front" alt="poker-card"/>`
       );
-    }, i * 800);
+    }, i * 600);
   }
-  setTimeout(addCardForComp, 500);
-  setTimeout(addCardForComp, 1200);
+  setTimeout(addCardForComp, 400);
+  setTimeout(addCardForComp, 1500);
 
   //if any player has a "natural 21" or "blackjack", they win immediately
   const compTotal = sumOfCardsVal(compTakenVal);
@@ -77,7 +77,7 @@ function newGame() {
       score.html(`<h4>${compTotal} - ${userTotal}</h4>`);
       startBtn.css("visibility", "visible");
       startBtn.html("Replay");
-    }, 2000);
+    }, 3000);
   } else if (compTotal === 21 && userTotal !== 21) {
     showCardForComp();
     setTimeout(() => {
@@ -85,7 +85,7 @@ function newGame() {
       score.html(`<h4>${compTotal} - ${userTotal}</h4>`);
       startBtn.css("visibility", "visible");
       startBtn.html("Replay");
-    }, 2000);
+    }, 3000);
   } else if (compTotal === 21 && userTotal === 21) {
     showCardForComp();
     setTimeout(() => {
@@ -93,13 +93,13 @@ function newGame() {
       score.append("<h4>It's a Tie 🤝</h4>");
       startBtn.css("visibility", "visible");
       startBtn.html("Replay");
-    }, 2000);
+    }, 3000);
   } else {
     //else, once both players have their 2 initial cards, "hit" and "stand" button will appear for user's next step
     setTimeout(() => {
       hitBtn.css("visibility", "visible");
       standBtn.css("visibility", "visible");
-    }, 2000);
+    }, 2500);
   }
 }
 
@@ -158,7 +158,7 @@ standBtn.click(() => {
     //replay button is shown once the game ends
     startBtn.css("visibility", "visible");
     startBtn.html("Replay");
-  }, 2000);
+  }, 3000);
 });
 
 /*FUNCTIONS*/
@@ -179,7 +179,7 @@ function showCardForComp() {
         `<img src="images/cards/${card}.png" class="card front" alt="poker-card"/>`
       );
     }
-  }, 1800);
+  }, 2000);
 }
 
 // make new deck
