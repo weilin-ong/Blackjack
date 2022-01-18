@@ -62,7 +62,7 @@ function newGame() {
       userCard.append(
         `<img src="images/cards/${card}.png" class="card front" alt="poker-card"/>`
       );
-    }, i * 1000);
+    }, i * 800);
   }
   setTimeout(addCardForComp, 500);
   setTimeout(addCardForComp, 1200);
@@ -74,6 +74,7 @@ function newGame() {
     showCardForComp();
     setTimeout(() => {
       user.html("User won 🏆");
+      score.html(`<h4>${compTotal} - ${userTotal}</h4>`);
       startBtn.css("visibility", "visible");
       startBtn.html("Replay");
     }, 2000);
@@ -81,12 +82,14 @@ function newGame() {
     showCardForComp();
     setTimeout(() => {
       comp.html("Computer won 🏆");
+      score.html(`<h4>${compTotal} - ${userTotal}</h4>`);
       startBtn.css("visibility", "visible");
       startBtn.html("Replay");
     }, 2000);
   } else if (compTotal === 21 && userTotal === 21) {
     showCardForComp();
     setTimeout(() => {
+      score.html(`<h4>${compTotal} - ${userTotal}</h4>`);
       score.append("<h4>It's a Tie 🤝</h4>");
       startBtn.css("visibility", "visible");
       startBtn.html("Replay");
@@ -176,7 +179,7 @@ function showCardForComp() {
         `<img src="images/cards/${card}.png" class="card front" alt="poker-card"/>`
       );
     }
-  }, 1000);
+  }, 1800);
 }
 
 // make new deck
