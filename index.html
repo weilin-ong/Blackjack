@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>Blackjack</title>
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="header">
+        <h1>Blackjack</h1>
+        <div id="score"></div>
+      </div>
+      <div id="cards">
+        <div id="computer">
+          <h2 id="computer-title">Computer</h2>
+          <div id="computer-card" class="card-container"></div>
+        </div>
+        <div id="deck">
+          <img src="images/deck.jpeg" id="deck-poker" />
+          <button class="btn" id="start">Start</button>
+        </div>
+        <div id="user">
+          <h2 id="user-title">User</h2>
+          <div id="user-card" class="card-container"></div>
+        </div>
+      </div>
+      <div id="action">
+        <button class="btn" id="hit">Hit</button>
+        <button class="btn" id="stand">Stand</button>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
